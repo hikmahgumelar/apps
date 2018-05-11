@@ -1,32 +1,73 @@
 {
-  "name": "apps_from_ablabs",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
-  },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-  "electron": "^1.8.4"
-  },
-  "dependencies": {
-    "bootstrap": "^4.1.1"
-  },
-  "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
-  },
-  "homepage": "https://github.com/electron/electron-quick-start#readme"
+    "name": "apps_from_ablabs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/electron/electron-quick-start.git"
+    },
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "GitHub",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "^1.8.4"
+    },
+    "dependencies": {
+        "bootstrap": "^4.1.1",
+        "copy-paste": "^1.3.0",
+        "electron-toolkit": "^1.0.24",
+        "ip": "^1.1.5",
+        "public-ip": "^2.4.0"
+    },
+    "bugs": {
+        "url": "https://github.com/electron/electron-quick-start/issues"
+    },
+    "homepage": "https://github.com/electron/electron-quick-start#readme",
+    "build": {
+        "appId": "com.electron.apps_from_ablabs",
+        "copyright": "Copyright © 2018 GitHub",
+        "productName": "Pendapatan Lain-Lain",
+        "electronVersion": "1.4.13",
+        "asar": true,
+        "directories": {
+            "app": "/home/gugum/projectx/webapp/job/apps",
+            "output": "dist"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        },
+        "linux": {
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "debian package (deb)",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        }
+    }
 }
