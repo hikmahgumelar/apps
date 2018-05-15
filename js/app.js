@@ -15,8 +15,8 @@ $scope.totalDatas = () => {
   return $scope.datas.length;
   }
 $scope.tambahDatas = () => {
- $scope.datas.push({text:$scope.formTambahdata.text, selesai:false});
- $scope.formTambahdata='';
+ $scope.datas.push({text:$scope.desValue, selesai:false});
+ $scope.desValue ='';
  }
 //akhir
 
