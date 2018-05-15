@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <script src="../js/angular.min.js"></script>
-  
-  <title >{{name}}</title>
+<html ng-app="APLL">
+  <title>APLL</title>
   <head>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <meta charset="UTF-8">
   </head>
-  <body>
+  <body ng-controller="MainController">
 
-    <div class="container" ng-app="">
-
+    <div class="container">
       <center><h3>PROGRAM APLIKASI PENDAPATAN</h3></center>
       <center><h3> LAIN-LAIN </h1></center>
       <hr>
       <div class="container">
         <div class="row">
-      <div class="col">
-        <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>Rp 1.537.500</b></font></h4>
+          <div class="col">
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>Rp 1.537.500</b></font></h4>
 
-          <input href="report.html" type="button" value="INPUT BARU" class="default">
-      </div>
-      <div class="col">
-      <img  src="../assets/indomaret.png" class="rounded float-right" border="0" style="margin:0">
-      </div>
+            <input href="report.html" type="button" value="INPUT BARU" class="default">
+          </div>
+          <div class="col">
+            <img  src="../assets/indomaret.png" class="rounded float-right" border="0" style="margin:0">
+          </div>
         </div>
       </div>
       <hr>
@@ -34,75 +31,70 @@
         </div>
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <label for="tglpembuatan">Tanggal Pembuatan:</label>
-          <input type="text" id="tglpembuatan" class="form-control" value="12 april 2018"readonly style="text-align:center">
+<label for="tglpembuatan">Tanggal Pembuatan:</label>
+<input type="text" id="tglpembuatan" class="form-control" value="{{tanggal | date:'yyyy-MM-dd'}}"readonly style="text-align:center">
         </div>
       </div>
       <hr>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Deskripsi</th>
-            <th>Ikatan</th>
-            <th>Berat Barang</th>
-            <th>Harga Satuan Barang</th>   
-            <th>Total Harga Barang</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox" name="kardus"</td>
-            <td>Kardus</td>
-            <td>3 Ikatan</td>
-            <td>4 KG</td> 
-            <td>@ikat 2500</td>
-            <td>Rp 10.000</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="plastik"</td>
-            <td>Plastik</td>
-            <td>5 Ikatan</td>
-            <td>2 KG</td> 
-            <td>@ikat 1500</td>
-            <td>Rp 7.500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="karung"</td>
-            <td>Karung</td>
-            <td>5 Ikatan</td>
-            <td>3 KG</td> 
-            <td>@ikat 4000</td>
-            <td>Rp 20.000</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="kardus"</td>
-            <td>Sewa Teras</td>
-            <td disabled></td>
-            <td readonly></td>
-            <td readonly></td>
-            <td>Rp 1.500.000</td>
-          </tr>
-        </tbody>
-      </table>
+      <form>
       <div class="container">
-        <div class="row">
-          <div class="col-sm">
-           <button type="button">SIMPAN</button>
-          </div>
-          <div class="col-sm">
-          
+      <div class="form-group row">
+      <div class="col-xs-4">
+        <label for="ex1">Deskripsi Barang </label>
+        <select class="form-control" ng-model="desbarValue" ng-options="x for x in desbar " ></select>
+      </div>
+      <div class="col-xs-4">
+        <label for="ex2">Jumlah Ikat </label>       
+        <select class="form-control" ng-model="ikatValue" ng-options="x for x in [1,10,1000] " ></select>
+      </div>
+      <div class="col-xs-4">
+        <label for="ex3">  Banyak Barang </label>
+        <select class="form-control" ng-model="beratValue" ng-options="x for x in banyaknya " ></select>
+      </div>
+    </div>
+      </div>
+    <hr>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Deskripsi</th>
+          <th>Ikatan</th>
+          <th>Berat Barang</th>
+          <th>Harga Satuan Barang</th>   
+          <th>Total Harga Barang</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kardus</td>
+          <td>3 Ikatan</td>
+          <td>4 KG</td> 
+          <td>@ikat 2500</td>
+          <td>Rp 10.000</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <button type="button">SIMPAN</button>
+        </div>
+        <div class="col-sm">
+
           <button href='report.html'>REPORT</button>
-          </div>
-          <div class="col-sm">
-         
+        </div>
+        <div class="col-sm">
+
           <button href='report.html' type="button"> CETAK </button>
-          </div>
         </div>
       </div>
-      <script>
+    </div>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+
+    <script>
 // You can also require other files to run in this process
 require('./renderer.js')
-      </script>
+    </script>
   </body>
 </html>

@@ -46,7 +46,6 @@ Menu.setApplicationMenu(menu)
       width: 350,
       title: "Tentang Pembuat Aplikasi",
       fullscreenable: false,
-      parent: mainWindow 
     });
     kotak.setMenu(null);
 kotak.loadURL(url.format({
