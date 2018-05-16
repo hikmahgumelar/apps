@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>Rp 1.537.500</b></font></h4>
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{TotalPendapatan}}</b></font></h4>
 
             <input href="report.html" type="button" value="INPUT BARU" class="default">
           </div>
@@ -49,11 +49,11 @@
       </div>
       <div class="col-2">
         <label for="ex3">  Banyak Barang </label>
-        <select class="form-control" ng-model="beratValue" ng-options="x for x in banyaknya " ></select>
+        <select class="form-control" ng-model="banyaknyaValue" ng-options="x for x in banyaknya " ></select>
       </div>
        <div class="col">
         <label for="ex3">Harga /ikat </label>
-        <select class="form-control" ng-model="beratValue" ng-options="x for x in banyaknya " ></select>
+        <select class="form-control" ng-model="harsatuValue" ng-options="x for x in hargasatuan " ></select>
       </div>
       </div>
       <button type="button" ng-click="tambahDatas()">Tambah</button>
@@ -64,7 +64,7 @@
       <thead>
         <tr>
           <th>Deskripsi</th>
-          <th>Ikatan</th>
+          <th>Ikat</th>
           <th>Berat Barang</th>
           <th>Harga Satuan Barang</th>   
           <th>Total Harga Barang</th>
@@ -72,11 +72,11 @@
       </thead>
       <tbody>
         <tr ng-repeat="data in datas">
-          <td>{{data.text}}</td>
-          <td>3 Ikatan</td>
-          <td>4 KG</td> 
-          <td>@ikat 2500</td>
-          <td>Rp 10.000</td>
+          <td>{{data.Destext}}</td>
+          <td>{{data.Ikattext}}</td>
+          <td>{{data.Banyaknyatext}}</td> 
+          <td>Rp.{{data.Hargasatuantext}} perikat </td>
+          <td>Rp.{{data.Ikattext * data.Hargasatuantext}}</td>
         </tr>
       </tbody>
     </table>
