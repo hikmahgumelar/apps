@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{TotalPendapatan}}</b></font></h4>
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{}}</b></font></h4>
 
             <input href="report.html" type="button" value="INPUT BARU" class="default">
           </div>
@@ -68,6 +68,7 @@
           <th>Berat Barang</th>
           <th>Harga Satuan Barang</th>   
           <th>Total Harga Barang</th>
+          <th>Opsi</th>
         </tr>
       </thead>
       <tbody>
@@ -77,6 +78,7 @@
           <td>{{data.Banyaknyatext}}</td> 
           <td>Rp.{{data.Hargasatuantext}} perikat </td>
           <td>Rp.{{data.Ikattext * data.Hargasatuantext}}</td>
+          <td><button class="btn btn-danger">hapus</button></td>
         </tr>
       </tbody>
     </table>

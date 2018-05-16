@@ -12,12 +12,17 @@ $scope.totalDatas = () => {
   return $scope.datas.length;
   }
 $scope.tambahDatas = () => {
- $scope.datas.push({Destext:$scope.desValue, Ikattext:$scope.ikatValue, Banyaknyatext:$scope.banyaknyaValue, Hargasatuantext:$scope.harsatuValue});
+ $scope.datas.push({notatext:$scope.notaValue,
+   Destext:$scope.desValue, 
+   Ikattext:$scope.ikatValue, 
+   Banyaknyatext:$scope.banyaknyaValue, 
+   Hargasatuantext:$scope.harsatuValue
+ });
  $scope.desValue ='';
  $scope.ikatValue='';
  $scope.banyaknyaValue='';
  $scope.harsatuValue='';
-$scope.TotalPendapatan = '';
+ $scope.TotalPendapatan = '';
  }
 //akhir
 
