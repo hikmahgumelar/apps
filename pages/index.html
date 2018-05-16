@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{}}</b></font></h4>
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b></b></font></h4>
 
             <input href="report.html" type="button" value="INPUT BARU" class="default">
           </div>
@@ -77,8 +77,8 @@
           <td>{{data.Ikattext}}</td>
           <td>{{data.Banyaknyatext}}</td> 
           <td>Rp.{{data.Hargasatuantext}} perikat </td>
-          <td>Rp.{{data.Ikattext * data.Hargasatuantext}}</td>
-          <td><button class="btn btn-danger">hapus</button></td>
+          <td ng-model="total">Rp.{{data.Ikattext * data.Hargasatuantext}}</td>
+          <td><button class="btn btn-danger" ng-click="hapus(data)">Hapus</button></td>
         </tr>
       </tbody>
     </table>

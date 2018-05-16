@@ -8,22 +8,23 @@ app.controller('MainController',['$scope', ($scope) => {
     $scope.hargasatuan = ["1000","2000"];
     
   $scope.datas = [];
-$scope.totalDatas = () => {
-  return $scope.datas.length;
+$scope.getid = (data) => {
+  return $scope.datas.indexOf(data);
   }
 $scope.tambahDatas = () => {
- $scope.datas.push({notatext:$scope.notaValue,
-   Destext:$scope.desValue, 
-   Ikattext:$scope.ikatValue, 
-   Banyaknyatext:$scope.banyaknyaValue, 
-   Hargasatuantext:$scope.harsatuValue
- });
- $scope.desValue ='';
- $scope.ikatValue='';
- $scope.banyaknyaValue='';
- $scope.harsatuValue='';
- $scope.TotalPendapatan = '';
- }
+    $scope.datas.push({notatext:$scope.notaValue,
+       Destext:$scope.desValue, 
+       Ikattext:$scope.ikatValue, 
+       Banyaknyatext:$scope.banyaknyaValue, 
+       Hargasatuantext:$scope.harsatuValue
+     });
+    $scope.totalJumlah = $scope.ikatValue * $scope.harsatuValue;
+
+    }
+$scope.hapus = (data) => {
+ const index = $scope.datas.indexOf(data);
+ $scope.datas.splice(index, 1);
+  }
 //akhir
 
 }])
