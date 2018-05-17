@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{Allhasil() }}</b></font></h4>
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{Allhasil()}}</b></font></h4>
 
             <input href="report.html" type="button" value="INPUT BARU" class="default">
           </div>
@@ -62,7 +62,7 @@
     <hr>
     <table class="table table-bordered">
       <thead>
-        <tr>
+        <tr align="center">
           <th>Deskripsi</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
@@ -72,7 +72,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="data in datas">
+        <tr align="center" ng-repeat="data in datas">
           <td>{{data.Destext}}</td>
           <td>{{data.Ikattext}}</td>
           <td>{{data.Banyaknyatext}}</td> 
@@ -89,11 +89,11 @@
         </div>
         <div class="col-sm">
 
-          <button href='report.html'>REPORT</button>
+          <button ng-href='./report.html'>REPORT</button>
         </div>
         <div class="col-sm">
 
-          <button href='report.html' type="button"> CETAK </button>
+          <button href='report.html'> CETAK </button>
         </div>
       </div>
     </div>
