@@ -16,15 +16,22 @@ $scope.tambahDatas = () => {
        Destext:$scope.desValue, 
        Ikattext:$scope.ikatValue, 
        Banyaknyatext:$scope.banyaknyaValue, 
-       Hargasatuantext:$scope.harsatuValue
+       Hargasatuantext:$scope.harsatuValue,
+     TotalHargatext :$scope.ikatValue * $scope.harsatuValue
      });
-    $scope.totalJumlah = $scope.ikatValue * $scope.harsatuValue;
 
     }
 $scope.hapus = (data) => {
  const index = $scope.datas.indexOf(data);
  $scope.datas.splice(index, 1);
-  }
+}
+$scope.Allhasil = () => {
+ let totalharga = 0;
+   for(let i=0;i < $scope.datas.length; i++ ){
+    let jumlahSemua = $scope.datas[i].TotalHargatext;
+      totalharga += jumlahSemua;
+   }
+  return totalharga;
+}
 //akhir
-
 }])
