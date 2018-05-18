@@ -19,7 +19,8 @@ $scope.tambahDatas = () => {
        Ikattext:$scope.ikatValue, 
        Banyaknyatext:$scope.banyaknyaValue, 
        Hargasatuantext:$scope.harsatuValue,
-     TotalHargatext :$scope.ikatValue * $scope.harsatuValue
+       TotalHargatext :$scope.ikatValue * $scope.harsatuValue,
+      // TotalSemuatext :$scope.totalharga,
           }});
 
     }
@@ -34,6 +35,8 @@ $scope.Allhasil = () => {
       
    }
   return totalharga;
+//  var hasilnya = totalharga;
 }
+
 //akhir
 }])
