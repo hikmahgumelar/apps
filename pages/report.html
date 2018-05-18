@@ -1,14 +1,60 @@
-<html>
-  <title>Laporan Pendapatan</title>
+<!DOCTYPE html>
+<html ng-app="APLL">
+  <title>APLL</title>
   <head>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <meta charset="UTF-8">
   </head>
-  <body>
-    <h3 align="center"> LAPORAN PENDAPATAN LAIN</h3>
- <div class="col">
-      <img  src="../assets/indomaret.png" class="rounded float-right" border="0" style="margin:0">
-      </div>
+  <body ng-controller="MainController">
 
+    <div class="container">
+      <center><h3>REPORT  PENDAPATAN</h3></center>
+      <center><h3> LAIN-LAIN </h1></center>
+      <hr>
+      <div class="col">
+        <h4><b>No. Nota</b> : N/2018/ID</h4>
+        <h4><b>Tanggal</b>  : {{tanggal | date:'yyyy-MM-dd'}}"</h4>
+      </div>
+      <hr>
+          <table class="table table-bordered">
+      <thead>
+        <tr align="center">
+          <th>Deskripsi</th>
+          <th>Ikat</th>
+          <th>Berat Barang</th>
+          <th>Harga Satuan Barang</th>   
+          <th>Total Harga Barang</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr align="center" ng-repeat="data in datas">
+          <td>{{data.Destext}}</td>
+          <td>{{data.Ikattext}}</td>
+          <td>{{data.Banyaknyatext}}</td> 
+          <td>Rp.{{data.Hargasatuantext}} perikat </td>
+          <td ng-model="total">Rp.{{data.TotalHargatext}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container">
+      <div class="row" align="center">
+        <div class="col-sm">
+          <a type=button class="btn btn-basic" href="report.html"> SIMPAN </a>
+        </div>
+        <div class="col-sm">
+          <a type=button class="btn btn-basic" href="report.html"> CETAK </a>
+        </div>
+        <div class="col-sm">
+          <a type=button class="btn btn-basic" href="index.html"> INPUT </a>
+        </div>
+      </div>
+    </div>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+
+    <script>
+// You can also require other files to run in this process
+require('./renderer.js')
+    </script>
   </body>
 </html>

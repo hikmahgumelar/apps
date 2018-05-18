@@ -56,8 +56,8 @@
         <select class="form-control" ng-model="harsatuValue" ng-options="x for x in hargasatuan " ></select>
       </div>
       </div>
-      <button type="button" ng-click="tambahDatas()">Tambah</button>
    
+      <a type=button class="btn btn-basic" ng-click="tambahDatas()"> Tambah </a>
       </div>
     <hr>
     <table class="table table-bordered">
@@ -83,17 +83,15 @@
       </tbody>
     </table>
     <div class="container">
-      <div class="row">
+      <div class="row" align="center">
         <div class="col-sm">
-          <button type="button">SIMPAN</button>
+          <a type=button class="btn btn-basic" href="report.html"> SIMPAN </a>
         </div>
         <div class="col-sm">
-
-          <button ng-href='./report.html'>REPORT</button>
+          <a type=button class="btn btn-basic" href="report.html"> CETAK </a>
         </div>
         <div class="col-sm">
-
-          <button href='report.html'> CETAK </button>
+          <a type=button class="btn btn-basic" href="report.html"> REPORT </a>
         </div>
       </div>
     </div>
