@@ -32,7 +32,7 @@
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
 <label for="tglpembuatan">Tanggal Pembuatan:</label>
-<input type="text" id="tglpembuatan" class="form-control" value="{{tanggal | date:'yyyy-MM-dd'}}"readonly style="text-align:center">
+<input type="text"  class="form-control" value="{{tanggal | date:'dd-MM-yyyy'}}"readonly style="text-align:center"></input>
         </div>
       </div>
       <hr>
@@ -63,6 +63,7 @@
     <table class="table table-bordered">
       <thead>
         <tr align="center">
+          <th>Tanggal</th>
           <th>Deskripsi</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
@@ -73,6 +74,7 @@
       </thead>
       <tbody>
         <tr align="center" ng-repeat="data in datas">
+          <td>{{data.tglnotatext | date:"dd-MM-yyyy"}}</td>
           <td>{{data.isi.Destext}}</td>
           <td>{{data.isi.Ikattext}}</td>
           <td>{{data.isi.Banyaknyatext}}</td> 
