@@ -14,7 +14,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{Allhasil()}}</b></font></h4>
+            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{Allhasil() | currency:"Rp ":0 }}</b></font></h4>
 
             <input href="report.html" type="button" value="INPUT BARU" class="default">
           </div>
@@ -78,8 +78,8 @@
           <td>{{data.isi.Destext}}</td>
           <td>{{data.isi.Ikattext}}</td>
           <td>{{data.isi.Banyaknyatext}}</td> 
-          <td>Rp.{{data.isi.Hargasatuantext}} perikat </td>
-          <td>Rp.{{data.isi.TotalHargatext}}</td>
+          <td>{{data.isi.Hargasatuantext | currency:"Rp ":0 }} @ikat </td>
+          <td>{{data.isi.TotalHargatext | currency:"Rp ":0 }}</td>
           <td><button class="btn btn-danger" ng-click="hapus(data)">Hapus</button></td>
         </tr>
       </tbody>
@@ -99,6 +99,7 @@
     </div>
     <script src="../js/angular.min.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/angular-locale_id-id.js"></script>
 
     <script>
 // You can also require other files to run in this process
