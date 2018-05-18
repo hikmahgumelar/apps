@@ -13,12 +13,14 @@ $scope.getid = (data) => {
   }
 $scope.tambahDatas = () => {
     $scope.datas.push({notatext:$scope.notaValue,
+                      tglnotatext:$scope.tanggal,
+                      isi: {
        Destext:$scope.desValue, 
        Ikattext:$scope.ikatValue, 
        Banyaknyatext:$scope.banyaknyaValue, 
        Hargasatuantext:$scope.harsatuValue,
      TotalHargatext :$scope.ikatValue * $scope.harsatuValue
-     });
+          }});
 
     }
 $scope.hapus = (data) => {
@@ -28,8 +30,8 @@ $scope.hapus = (data) => {
 $scope.Allhasil = () => {
  let totalharga = 0;
    for(let i=0;i < $scope.datas.length; i++ ){
-    let jumlahSemua = $scope.datas[i].TotalHargatext;
-      totalharga += jumlahSemua;
+    totalharga += $scope.datas[i].isi.TotalHargatext;
+      
    }
   return totalharga;
 }

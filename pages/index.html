@@ -73,11 +73,11 @@
       </thead>
       <tbody>
         <tr align="center" ng-repeat="data in datas">
-          <td>{{data.Destext}}</td>
-          <td>{{data.Ikattext}}</td>
-          <td>{{data.Banyaknyatext}}</td> 
-          <td>Rp.{{data.Hargasatuantext}} perikat </td>
-          <td ng-model="total">Rp.{{data.TotalHargatext}}</td>
+          <td>{{data.isi.Destext}}</td>
+          <td>{{data.isi.Ikattext}}</td>
+          <td>{{data.isi.Banyaknyatext}}</td> 
+          <td>Rp.{{data.isi.Hargasatuantext}} perikat </td>
+          <td>Rp.{{data.isi.TotalHargatext}}</td>
           <td><button class="btn btn-danger" ng-click="hapus(data)">Hapus</button></td>
         </tr>
       </tbody>
