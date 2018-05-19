@@ -1,5 +1,5 @@
-const app = angular.module('APLL',[]);
-app.controller('MainController',['$scope', ($scope) => {
+const app = angular.module('APLL',['ngStorage']);
+app.controller('MainController', ($scope, $localStorage) => {
     $scope.title = 'APLIKASI PENDAPATAN LAIN-LAIN';
     $scope.desbar= ['Kardus','Plastik','Karung','Sewa Teras'];
     $scope.ikat = ['1,2,3,4,5,6,7,8,9,10'];
@@ -32,9 +32,15 @@ $scope.tambahDatas = () => {
           }});
 
     }
+$scope.simpan = () => {
+  console.log($scope.datas);
+  $localStorage.data = $scope.datas;
+}
 $scope.hapus = (data) => {
  const index = $scope.datas.indexOf(data);
  $scope.datas.splice(index, 1);
 }
+
+$scope.tampil = $localStorage.data;
 //akhir
-}])
+})
