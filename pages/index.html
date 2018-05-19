@@ -13,10 +13,10 @@
       <hr>
       <div class="container">
         <div class="row">
-          <div class="col">
-            <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6><h4><font color="red"><b>{{Allhasil() | currency:"Rp ":0 }}</b></font></h4>
-
-            <input href="report.html" type="button" value="INPUT BARU" class="default">
+          <div class="col-3" >
+            <label > <h6>TOTAL PENDAPATAN LAIN-LAIN :</h6></label>
+            <input type="text" class="form-control" value="{{Allhasil() | currency:'Rp ' :0 }}" style="text-align:center; color:red">
+    
           </div>
           <div class="col">
             <img  src="../assets/indomaret.png" class="rounded float-right" border="0" style="margin:0">
@@ -63,7 +63,6 @@
     <table class="table table-bordered">
       <thead>
         <tr align="center">
-          <th>Tanggal</th>
           <th>Deskripsi</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
@@ -74,12 +73,12 @@
       </thead>
       <tbody>
         <tr align="center" ng-repeat="data in datas">
-          <td>{{data.tglnotatext | date:"dd-MM-yyyy"}}</td>
           <td>{{data.isi.Destext}}</td>
           <td>{{data.isi.Ikattext}}</td>
           <td>{{data.isi.Banyaknyatext}}</td> 
           <td>{{data.isi.Hargasatuantext | currency:"Rp ":0 }} @ikat </td>
           <td>{{data.isi.TotalHargatext | currency:"Rp ":0 }}</td>
+          <td>{{data.isi.TotalSemuatext}}</td>
           <td><button class="btn btn-danger" ng-click="hapus(data)">Hapus</button></td>
         </tr>
       </tbody>
@@ -87,7 +86,7 @@
     <div class="container">
       <div class="row" align="center">
         <div class="col-sm">
-          <a type=button class="btn btn-basic" href="report.html"> SIMPAN </a>
+          <a type=button class="btn btn-basic" ng-click="simpanKeTorage()"> SIMPAN </a>
         </div>
         <div class="col-sm">
           <a type=button class="btn btn-basic" href="report.html"> CETAK </a>

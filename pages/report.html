@@ -13,7 +13,7 @@
       <hr>
       <div class="col">
         <h4><b>No. Nota</b> : N/2018/ID</h4>
-        <h4><b>Tanggal</b>  : {{tanggal | date:'yyyy-MM-dd'}}"</h4>
+        <h4><b>Tanggal</b>  : {{}}"</h4>
       </div>
       <hr>
           <table class="table table-bordered">
@@ -28,11 +28,11 @@
       </thead>
       <tbody>
         <tr align="center" ng-repeat="data in datas">
-          <td>{{data.Destext}}</td>
-          <td>{{data.Ikattext}}</td>
-          <td>{{data.Banyaknyatext}}</td> 
-          <td>Rp.{{data.Hargasatuantext}} perikat </td>
-          <td ng-model="total">Rp.{{data.TotalHargatext}}</td>
+          <td>{{data.isi.Destext}}</td>
+          <td>{{data.isi.Ikattext}}</td>
+          <td>{{data.isi.Banyaknyatext}}</td> 
+          <td>Rp.{{data.isi.Hargasatuantext}} perikat </td>
+          <td ng-model="total">Rp.{{data.isi.TotalHargatext}}</td>
         </tr>
       </tbody>
     </table>
@@ -53,6 +53,7 @@
     </div>
     <script src="../js/angular.min.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/ngStorage.min.js"></script>
 
     <script>
 // You can also require other files to run in this process

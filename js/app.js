@@ -6,11 +6,20 @@ app.controller('MainController',['$scope', ($scope) => {
     $scope.tanggal = new Date();
     $scope.banyaknya =  ["1 Kg","2 Kg","3 Kg","4 Kg"] ;
     $scope.hargasatuan = ["1000","2000"];
-    
   $scope.datas = [];
 $scope.getid = (data) => {
   return $scope.datas.indexOf(data);
   }
+$scope.Allhasil = () => {
+ let totalharga = 0;
+   for(let i=0;i < $scope.datas.length; i++ ){
+    totalharga += $scope.datas[i].isi.TotalHargatext;
+      
+   }
+  return totalharga;
+  $scope.hasilnya = "totalharga";
+}
+
 $scope.tambahDatas = () => {
     $scope.datas.push({notatext:$scope.notaValue,
                       tglnotatext:$scope.tanggal,
@@ -20,7 +29,6 @@ $scope.tambahDatas = () => {
        Banyaknyatext:$scope.banyaknyaValue, 
        Hargasatuantext:$scope.harsatuValue,
        TotalHargatext :$scope.ikatValue * $scope.harsatuValue,
-      // TotalSemuatext :$scope.totalharga,
           }});
 
     }
@@ -28,15 +36,5 @@ $scope.hapus = (data) => {
  const index = $scope.datas.indexOf(data);
  $scope.datas.splice(index, 1);
 }
-$scope.Allhasil = () => {
- let totalharga = 0;
-   for(let i=0;i < $scope.datas.length; i++ ){
-    totalharga += $scope.datas[i].isi.TotalHargatext;
-      
-   }
-  return totalharga;
-//  var hasilnya = totalharga;
-}
-
 //akhir
 }])
