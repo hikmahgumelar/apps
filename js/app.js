@@ -1,5 +1,5 @@
-const app = angular.module('APLL',['ngStorage']);
-app.controller('MainController', ($scope, $localStorage) => {
+const app = angular.module('APLL',[]);
+app.controller('MainController', ($scope, $localStorage, dbService) => {
     $scope.title = 'APLIKASI PENDAPATAN LAIN-LAIN';
     $scope.desbar= ['Kardus','Plastik','Karung','Sewa Teras'];
     $scope.ikat = ['1,2,3,4,5,6,7,8,9,10'];
@@ -18,6 +18,12 @@ $scope.Allhasil = () => {
    }
   return totalharga;
   $scope.hasilnya = "totalharga";
+}
+
+$scope.listaPessoas = function(){
+		dbService.runAsync("SELECT * FROM pessoas WHERE ativo = 1", function(data){
+			$scope.pessoas = data;
+		});
 }
 
 $scope.tambahDatas = () => {
