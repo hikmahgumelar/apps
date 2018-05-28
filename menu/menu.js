@@ -37,13 +37,13 @@ const template =[
 const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
 //menu about app
-const kotak = null;
+var kotak = null;
 function frameAbout(){
     if (kotak) {
       kotak.focus()
         return;
     }
-    kotak = new BrowserWindow({
+kotak = new BrowserWindow({
       height: 220,
       resizable: false,
       width: 350,
@@ -62,16 +62,16 @@ kotak = null;
 };
 
 //rubah password
-const kotak1 = null;
+var kotak1 = null;
 function frameRubahPassword(){
     if (kotak1) {
       kotak1.focus()
         return;
     }
     kotak1 = new BrowserWindow({
-      height: 220,
+      height: 450,
       resizable: false,
-      width: 350,
+      width: 450,
       title: "Rubah Password",
       fullscreenable: false,
     });

@@ -1,8 +1,8 @@
 const app = angular.module('APLL',['ngStorage']);
 
-app.factory("dbService", function($http){
-        var sqlite = require('sqlite-sync');
-        var db = sqlite.connect('model/database.db');
+app.factory("dbService", ($http) => {
+        let sqlite = require('sqlite-sync');
+        let db = sqlite.connect('model/database.db');
         return db;
 });
 
