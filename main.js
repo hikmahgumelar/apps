@@ -29,7 +29,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'pages/index.html'),
+    pathname: path.join(__dirname, 'pages/login.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -45,7 +45,7 @@ function createWindow () {
     mainWindow = null
   })
 
-   //require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan 
+   require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan 
 }
 
 // This method will be called when Electron has finished
