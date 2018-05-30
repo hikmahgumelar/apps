@@ -73,17 +73,16 @@
       </thead>
       <tbody>
         <tr align="center" ng-repeat="data in datas">
-          <td>{{data.isi.Destext}}</td>
-          <td>{{data.isi.Ikattext}}</td>
-          <td>{{data.isi.Banyaknyatext}}</td> 
-          <td>{{data.isi.Hargasatuantext | currency:"Rp ":0 }} @ikat </td>
-          <td>{{data.isi.TotalHargatext | currency:"Rp ":0 }}</td>
+          <td>{{data.Destext}}</td>
+          <td>{{data.Ikattext}}</td>
+          <td>{{data.Banyaknyatext}}</td> 
+          <td>{{data.Hargasatuantext | currency:"Rp ":0 }} @ikat </td>
+          <td> {{data.TotalHargatext | currency:"Rp ":0 }}</td>
           <td><button class="btn btn-danger" ng-click="hapus(data)">Hapus</button></td>
         </tr>
       </tbody>
     </table>
 
-    {{pessoas}}
     <div class="container">
       <div class="row" align="center">
         <div class="col-sm">

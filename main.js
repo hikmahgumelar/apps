@@ -45,7 +45,7 @@ function createWindow () {
     mainWindow = null
   })
 
-   require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan 
+   //require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan 
 }
 
 // This method will be called when Electron has finished

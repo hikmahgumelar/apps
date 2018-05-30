@@ -20,33 +20,36 @@ $scope.getid = (data) => {
 $scope.Allhasil = () => {
  let totalharga = 0;
    for(let i=0;i < $scope.datas.length; i++ ){
-    totalharga += $scope.datas[i].isi.TotalHargatext;
+    totalharga += $scope.datas[i].TotalHargatext;
       
    }
   return totalharga;
   $scope.hasilnya = "totalharga";
 }
 $scope.akses = () => {
-	dbService.runAsync("SELECT * FROM pessoas WHERE ativo = 1", (data) => {
+	dbService.runAsync("SELECT * FROM listbarang", (data) => {
 			$scope.pessoas = data;
-			console.log('nih datanya ==>' + data);
 		});
 }
 $scope.tambahDatas = () => {
     $scope.datas.push({notatext:$scope.notaValue,
                       tglnotatext:$scope.tanggal,
-                      isi: {
-       Destext:$scope.desValue, 
-       Ikattext:$scope.ikatValue, 
-       Banyaknyatext:$scope.banyaknyaValue, 
-       Hargasatuantext:$scope.harsatuValue,
-       TotalHargatext :$scope.ikatValue * $scope.harsatuValue,
-          }});
+                      Destext:$scope.desValue, 
+                      Ikattext:$scope.ikatValue, 
+                      Banyaknyatext:$scope.banyaknyaValue, 
+                      Hargasatuantext:$scope.harsatuValue,
+                      TotalHargatext :$scope.ikatValue * $scope.harsatuValue,
+          });
 
     }
 $scope.simpan = () => {
-  console.log($scope.datas);
-  $localStorage.data = $scope.datas;
+  //$localStorage.data = $scope.datas;
+  for(let i=0;i < $scope.datas.length; i++){
+  
+    dbService.insert('listbarang',{ desbar: $scope.datas[i].Destext, jml_ikat: $scope.datas[i].Ikattext, banyak_brg: $scope.datas[i].Banyaknyatext, harga_ikat: $scope.datas[i].Hargasatuantext, total_hrg: $scope.datas[i].TotalHargatext });
+ console.log($scope.datas[i].Destext);
+}
+
 }
 $scope.hapus = (data) => {
  const index = $scope.datas.indexOf(data);
