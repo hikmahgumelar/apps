@@ -28,7 +28,7 @@ $scope.Allhasil = () => {
 }
 $scope.akses = () => {
 	dbService.runAsync("SELECT * FROM listbarang", (data) => {
-			$scope.pessoas = data;
+			$scope.tampildata = data;
 		});
 }
 $scope.tambahDatas = () => {

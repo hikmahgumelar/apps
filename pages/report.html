@@ -8,37 +8,39 @@
   <body ng-controller="MainController">
 
     <div class="container">
-      <center><h3>REPORT  PENDAPATAN</h3></center>
+      <center><h3>REKAP  PENDAPATAN</h3></center>
       <center><h3> LAIN-LAIN </h1></center>
       <hr>
       <div class="col">
-        <h4><b>No. Nota</b> : N/2018/ID</h4>
-        <h4><b>Tanggal</b>  : {{}}"</h4>
+        <h4><b>Periode</b>  : April 2018 - Mei 2018"</h4>
       </div>
       <hr>
           <table class="table table-bordered">
       <thead>
         <tr align="center">
-          <th>Deskripsi</th>
+          <th>Deskripsi Barang</th>
+          <th>Tanggal</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
           <th>Harga Satuan Barang</th>   
           <th>Total Harga Barang</th>
+          <th>Opsi</th>
         </tr>
       </thead>
       <tbody>
-        <tr align="center" ng-repeat="data in datas">
-          <td>{{data.isi.Destext}}</td>
-          <td>{{data.isi.Ikattext}}</td>
-          <td>{{data.isi.Banyaknyatext}}</td> 
-          <td>Rp.{{data.isi.Hargasatuantext}} perikat </td>
-          <td ng-model="total">Rp.{{data.isi.TotalHargatext}}</td>
+        <tr align="center" ng-repeat="data in tampildata">
+          <td>{{data.desbar}}</td>
+          <td>tanggal</td>
+          <td>{{data.jml_ikat}}</td>
+          <td>{{data.banyak_brg}}</td> 
+          <td>Rp.{{data.harga_ikat}} perikat </td>
+          <td ng-model="total">Rp.{{data.total_hrg}}</td>
+          <td><a type=button>Hapus</a>
         </tr>
       </tbody>
     </table>
-    
-    {{tampil}}
-
+    {{tampildata}}
+    <button ng-click="akses()">tekan</button>
         <div class="row">
         
         <div class="col" align="center">
