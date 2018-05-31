@@ -18,14 +18,26 @@ $scope.getid = (data) => {
   return $scope.datas.indexOf(data);
   }
 $scope.Allhasil = () => {
- let totalharga = 0;
-   for(let i=0;i < $scope.datas.length; i++ ){
-    totalharga += $scope.datas[i].TotalHargatext;
+ 	dbService.runAsync("SELECT * FROM listbarang", (data) => {
+			$scope.tampildata = data;
+		});
+  let totalharga = 0;
+   for(let i=0;i < $scope.tampildata.length; i++ ){
+    totalharga += $scope.tampildata[i].total_hrg;
       
    }
   return totalharga;
   $scope.hasilnya = "totalharga";
 }
+// $scope.Allhasil = () => {
+//  let totalharga = 0;
+//    for(let i=0;i < $scope.datas.length; i++ ){
+//     totalharga += $scope.datas[i].TotalHargatext;
+//       
+//    }
+//   return totalharga;
+//   $scope.hasilnya = "totalharga";
+// }
 $scope.akses = () => {
 	dbService.runAsync("SELECT * FROM listbarang", (data) => {
 			$scope.tampildata = data;

@@ -19,7 +19,6 @@
       <thead>
         <tr align="center">
           <th>Deskripsi Barang</th>
-          <th>Tanggal</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
           <th>Harga Satuan Barang</th>   
@@ -30,16 +29,16 @@
       <tbody>
         <tr align="center" ng-repeat="data in tampildata">
           <td>{{data.desbar}}</td>
-          <td>tanggal</td>
           <td>{{data.jml_ikat}}</td>
           <td>{{data.banyak_brg}}</td> 
           <td>Rp.{{data.harga_ikat}} perikat </td>
           <td ng-model="total">Rp.{{data.total_hrg}}</td>
-          <td><a type=button class="btn btn-default"> Hapus </a></td>
+          <td><a type=button class="btn btn-default"> Hapus </a> <a type=button class="btn btn-default"> Cetak </a> </td>
         </tr>
       </tbody>
     </table>
-    <button ng-click="akses()">tekan</button>
+    <a type=button class="btn btn-default" ng-click="akses()">Tampilkan Data Rekap</a>
+    <a type=button class="btn btn-default" href="index.html">Back to Home</a>
         <div class="row">
         
         <div class="col" align="center">
