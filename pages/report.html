@@ -12,7 +12,7 @@
       <center><h3> LAIN-LAIN </h1></center>
       <hr>
       <div class="col">
-        <h4><b>Periode</b>  : April 2018 - Mei 2018"</h4>
+        <h4><b>Periode</b>  : April 2018 - Mei 2018</h4>
       </div>
       <hr>
           <table class="table table-bordered">
@@ -35,20 +35,24 @@
           <td>{{data.banyak_brg}}</td> 
           <td>Rp.{{data.harga_ikat}} perikat </td>
           <td ng-model="total">Rp.{{data.total_hrg}}</td>
-          <td><a type=button>Hapus</a>
+          <td><a type=button class="btn btn-default"> Hapus </a></td>
         </tr>
       </tbody>
     </table>
-    {{tampildata}}
     <button ng-click="akses()">tekan</button>
         <div class="row">
         
         <div class="col" align="center">
         </div>
           <div class="col" align="center">
-          <h6>Penanggung jawab</h6>
+            <h6>Jakarta, {{tanggal | date:'dd-MM-yyyy'}}</h6>
+            <p></P>
+            <p></P>
+            <p></P>
+            <p></P>
 
-             <h7>(Kasir)</h7>
+
+             <h7>(Penanggung Jawab)</h7>
         </div>
         </div>
       </div>

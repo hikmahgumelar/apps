@@ -45,11 +45,11 @@
       </div>
       <div class="col-2">
         <label for="ex2">Jumlah Ikat </label>       
-        <select class="form-control" ng-model="ikatValue" ng-options="x for x in [1,10,1000] " ></select>
+        <select class="form-control" ng-model="ikatValue" ng-options="x for x in ikat " ></select>
       </div>
       <div class="col-2">
-        <label for="ex3">  Banyak Barang </label>
-        <select class="form-control" ng-model="banyaknyaValue" ng-options="x for x in banyaknya " ></select>
+        <label for="ex3">Berat Barang</label>
+        <select class="form-control" ng-model="banyaknyaValue" ng-options="x for x in banyaknya" ></select>
       </div>
        <div class="col">
         <label for="ex3">Harga /ikat </label>
@@ -86,13 +86,13 @@
     <div class="container">
       <div class="row" align="center">
         <div class="col-sm">
-          <a type=button class="btn btn-basic" ng-click="simpan()"> SIMPAN </a>
+          <a type=button class="btn btn-basic" ng-click="simpan()"> Simpan </a>
         </div>
+        <!-- <div class="col-sm"> -->
+        <!--   <a type=button class="btn btn-basic" href="login.html" > SHOW </a> -->
+        <!-- </div> -->
         <div class="col-sm">
-          <a type=button class="btn btn-basic" href="login.html" > SHOW </a>
-        </div>
-        <div class="col-sm">
-          <a type=button class="btn btn-basic" ng-click="akses()" href="report.html"> REPORT </a>
+          <a type=button class="btn btn-basic" ng-click="akses()" href="report.html"> Laporan </a>
         </div>
       </div>
     </div>

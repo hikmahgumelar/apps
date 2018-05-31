@@ -8,11 +8,11 @@ app.factory("dbService", ($http) => {
 
 app.controller('MainController', ($scope, $localStorage, dbService) => {
     $scope.title = 'APLIKASI PENDAPATAN LAIN-LAIN';
-    $scope.desbar= ['Kardus','Plastik','Karung','Sewa Teras'];
-    $scope.ikat = ['1,2,3,4,5,6,7,8,9,10'];
+    $scope.desbar= ['Kardus','Plastik','Karung'];
+    $scope.ikat = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     $scope.tanggal = new Date();
-    $scope.banyaknya =  ["1 Kg","2 Kg","3 Kg","4 Kg"] ;
-    $scope.hargasatuan = ["1000","2000"];
+    $scope.banyaknya =  ["1","2","3","4"] ;
+    $scope.hargasatuan = ["1000","2000","3000","4000","5000","6000","7000","8000","9000","10000"];
   $scope.datas = [];
 $scope.getid = (data) => {
   return $scope.datas.indexOf(data);
@@ -38,7 +38,7 @@ $scope.tambahDatas = () => {
                       Ikattext:$scope.ikatValue, 
                       Banyaknyatext:$scope.banyaknyaValue, 
                       Hargasatuantext:$scope.harsatuValue,
-                      TotalHargatext :$scope.ikatValue * $scope.harsatuValue,
+                      TotalHargatext :$scope.banyaknyaValue * $scope.harsatuValue,
           });
 
     }
