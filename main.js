@@ -26,7 +26,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1024, height: 768})
-
+  mainWindow.maximize(true);
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'pages/login.html'),
@@ -45,7 +45,7 @@ function createWindow () {
     mainWindow = null
   })
 
-   require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan 
+   require(ownmenu)//untuk menghilangkan menu beri tanda "//" di depan
 }
 
 // This method will be called when Electron has finished

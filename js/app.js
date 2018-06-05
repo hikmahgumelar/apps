@@ -17,6 +17,12 @@ app.controller('MainController', ($scope, $localStorage, dbService) => {
 $scope.getid = (data) => {
   return $scope.datas.indexOf(data);
   }
+$scope.hapus = () => {
+
+ dbService.prepare('DELETE FROM `people` WHERE `person_id` IS ?', (data) => {
+   $scope.tampilygdihapus = data;
+ })
+}
 $scope.Allhasil = () => {
  	dbService.runAsync("SELECT * FROM listbarang", (data) => {
 			$scope.tampildata = data;
@@ -24,7 +30,7 @@ $scope.Allhasil = () => {
   let totalharga = 0;
    for(let i=0;i < $scope.tampildata.length; i++ ){
     totalharga += $scope.tampildata[i].total_hrg;
-      
+
    }
   return totalharga;
   $scope.hasilnya = "totalharga";
@@ -33,7 +39,7 @@ $scope.Allhasil = () => {
 //  let totalharga = 0;
 //    for(let i=0;i < $scope.datas.length; i++ ){
 //     totalharga += $scope.datas[i].TotalHargatext;
-//       
+//
 //    }
 //   return totalharga;
 //   $scope.hasilnya = "totalharga";
@@ -46,9 +52,9 @@ $scope.akses = () => {
 $scope.tambahDatas = () => {
     $scope.datas.push({notatext:$scope.notaValue,
                       tglnotatext:$scope.tanggal,
-                      Destext:$scope.desValue, 
-                      Ikattext:$scope.ikatValue, 
-                      Banyaknyatext:$scope.banyaknyaValue, 
+                      Destext:$scope.desValue,
+                      Ikattext:$scope.ikatValue,
+                      Banyaknyatext:$scope.banyaknyaValue,
                       Hargasatuantext:$scope.harsatuValue,
                       TotalHargatext :$scope.banyaknyaValue * $scope.harsatuValue,
           });
@@ -57,7 +63,7 @@ $scope.tambahDatas = () => {
 $scope.simpan = () => {
   //$localStorage.data = $scope.datas;
   for(let i=0;i < $scope.datas.length; i++){
-  
+
     dbService.insert('listbarang',{ desbar: $scope.datas[i].Destext, jml_ikat: $scope.datas[i].Ikattext, banyak_brg: $scope.datas[i].Banyaknyatext, harga_ikat: $scope.datas[i].Hargasatuantext, total_hrg: $scope.datas[i].TotalHargatext });
  console.log($scope.datas[i].Destext);
 }

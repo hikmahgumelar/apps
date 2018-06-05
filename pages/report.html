@@ -7,7 +7,7 @@
   </head>
   <body ng-controller="MainController">
 
-    <div class="container">
+    <div class="container" ng-init="akses()">
       <center><h3>REKAP  PENDAPATAN</h3></center>
       <center><h3> LAIN-LAIN </h1></center>
       <hr>
@@ -21,7 +21,7 @@
           <th>Deskripsi Barang</th>
           <th>Ikat</th>
           <th>Berat Barang</th>
-          <th>Harga Satuan Barang</th>   
+          <th>Harga Satuan Barang</th>
           <th>Total Harga Barang</th>
           <th>Opsi</th>
         </tr>
@@ -30,17 +30,16 @@
         <tr align="center" ng-repeat="data in tampildata">
           <td>{{data.desbar}}</td>
           <td>{{data.jml_ikat}}</td>
-          <td>{{data.banyak_brg}}</td> 
+          <td>{{data.banyak_brg}}</td>
           <td>Rp.{{data.harga_ikat}} perikat </td>
           <td ng-model="total">Rp.{{data.total_hrg}}</td>
-          <td><a type=button class="btn btn-default"> Hapus </a> <a type=button class="btn btn-default"> Cetak </a> </td>
+          <td><a type=button ng-click="hapus()" class="btn btn-default"> Hapus </a> <a type=button class="btn btn-default"> Cetak </a> </td>
         </tr>
       </tbody>
     </table>
-    <a type=button class="btn btn-default" ng-click="akses()">Tampilkan Data Rekap</a>
     <a type=button class="btn btn-default" href="index.html">Back to Home</a>
         <div class="row">
-        
+
         <div class="col" align="center">
         </div>
           <div class="col" align="center">
